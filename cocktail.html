@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktail Lover</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="cocktail.css" type="text/css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <section id="header">
+        <nav class="navbar navbar-expand ">
+            <div class="container mb-2">
+                <a class="navbar-brand text-white" href="cocktail.html">Cocktail Lover</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="coctail.html" class="nav-link btn btn-danger btn-sm p-1 mt-1 me-4"> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.facebook.com/" class="nav-link">
+                                <i class="fa fa-facebook-square  me-2"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://twitter.com/" class="nav-link">
+                                <i class="fa fa-twitter-square "></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </section>
+
+    <!-- Search Bars -->
+    <section id="search-bars">
+        <div class="container">
+            <hr class="text-white border border-1 mt-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control searchBarName"
+                            placeholder="Search for a Cocktail by Name">
+                        <div class="input-group-append">
+                            <button class="btn btn-light searchName"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control searchBarIngredient"
+                            placeholder="Search for a Cocktail by ingredient">
+                        <div class="input-group-append ">
+                            <button class="btn btn-light searchIngredient"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Non Alcoholic</option>
+                        <option value="1">Alcoholic</option>
+                    </select>
+                </div>
+            </div>
+            <p class="text-center text-white mt-3">Browse by Name</p>
+            <p class="text-center text-white alphabet">A/B/C/D/E/F/G/H/I/J/K/L/M/N/O/P/Q/R/S/T/U/V/W/X/Y/Z</p>
+            <hr class="text-white border border-1">
+            <p class="text-center text-white mt-3">Random Drinks</p>
+        </div>
+    </section>
+
+    <!-- Random Drinks -->
+    <section id="random-Drink">
+        <div class="container drinks">
+            <div class="row">
+                <div class="col-sm-3 coctail img-1 ">
+                </div>
+                <div class="col-sm-3 coctail img-2 ">
+                </div>
+                <div class="col-sm-3 coctail img-3 ">
+                </div>
+                <div class="col-sm-3 cocktail img-4 ">
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-sm-3 cocktail img-5 ">
+                </div>
+                <div class="col-sm-3 coctail img-6 ">
+                </div>
+                <div class="col-sm-3 coctail img-7 ">
+                </div>
+                <div class="col-sm-3 coctail img-8 ">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script src="cocktail.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+const searchName = localStorage.getItem('searchBarName');
+const searchIngredient = localStorage.getItem('searchBarIngredient');
+const cocktail = document.querySelector('.cocktail');
+
+
+// Cocktail searched by Name & Ingredient
+
+if (localStorage.getItem('flag') == 'byName') {
+    url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchName}`;
+} else {
+    url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchIngredient}`;
+}
+
+fetch(url)
+    .then((resp) => resp.json())
+    .then(function (data) {
+        const drinks = data.drinks;
+        console.log(drinks)
+        drinks.forEach(element => {
+            const div = document.createElement('div');
+            div.setAttribute('class', 'col-md-3 mt-5');
+            div.innerHTML = `<img src="${element.strDrinkThumb}" id="${element.idDrink}" class="img-details"> <p class="text-white text-center fs"> ${element.strDrink}</p>`
+            cocktail.appendChild(div);
+            detailsDrink(element.idDrink);
+        })
+    })
+    .catch(function (error) {
+        console.log(error);
+        alert('No data');
+    });
+
+
+// Cliked image
+
+let detailsDrink = (drinkId) => {
+    const imgDetails = document.querySelector(`[id='${drinkId}']`);
+    imgDetails.addEventListener('click', (event) => {
+        localStorage.setItem('id', JSON.parse(event.target.id));
+        window.open("cocktail-details.html");
+    })
+}

@@ -1,0 +1,37 @@
+body {
+    background-color: #4c0253;
+}
+
+#header {
+    background-color: #642368;
+    color: white;
+}
+
+hr {
+    opacity: 1;
+}
+
+.alphabet {
+    letter-spacing: 5px;
+}
+
+img,
+.img-coctail {
+    width: 100%;
+    height: 100%;
+}
+
+.right img {
+    width: 80%;
+    height: 80%;
+}
+
+.ingredient-name {
+    font-size: 10px;
+    opacity: 0.5;
+}
+
+.fs {
+    font-size: 12px;
+    opacity: 0.8;
+}
