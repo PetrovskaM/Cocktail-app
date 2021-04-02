@@ -11,10 +11,6 @@ hr {
     opacity: 1;
 }
 
-.alphabet {
-    letter-spacing: 5px;
-}
-
 img,
 .img-coctail {
     width: 100%;
@@ -34,4 +30,7 @@ img,
 .fs {
     font-size: 12px;
     opacity: 0.8;
+}
+.alphabet span:hover {
+    cursor: pointer;
 }

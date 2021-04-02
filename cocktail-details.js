@@ -2,6 +2,7 @@ const id = localStorage.getItem('id');
 const urlDetails = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
 const mainSectionRight = document.querySelector('.right');
 let wraper = document.querySelector('.wrapper');
+
 // Drink details-ingredient
 fetch(urlDetails)
     .then((resp) => resp.json())

@@ -1,6 +1,8 @@
 const urlRandomCocktail = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
 const searchName = document.querySelector('.searchName');
 const searchIngredient = document.querySelector('.searchIngredient');
+const select = document.querySelector("#select-cocktail");
+const alphabet = document.querySelectorAll('.alphabet span');
 
 // Eight  Random drinks
 for (let i = 1; i <= 8; i++) {
@@ -46,4 +48,24 @@ searchIngredient.addEventListener('click', function () {
     localStorage.setItem('searchBarIngredient', searchBarIngredient);
     localStorage.setItem('flag', 'byIngredient');
     window.open("cocktail-filter.html");
+})
+
+// Non Alcoholic/Alcoholic
+
+select.addEventListener('change', function () {
+    const selectCocktail = document.querySelector('#select-cocktail').value;
+    localStorage.setItem('select-cocktail', selectCocktail);
+    localStorage.setItem('flag', 'select');
+    window.open("cocktail-filter.html");
+
+});
+ 
+// Search by first letter
+
+alphabet.forEach(element => {
+    element.addEventListener('click', function () {
+        localStorage.setItem('letter', element.innerHTML);
+        localStorage.setItem('flag', 'letter');
+        window.open("cocktail-filter.html");
+    })
 })

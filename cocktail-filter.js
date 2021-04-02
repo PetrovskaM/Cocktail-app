@@ -1,14 +1,22 @@
 const searchName = localStorage.getItem('searchBarName');
 const searchIngredient = localStorage.getItem('searchBarIngredient');
 const cocktail = document.querySelector('.cocktail');
-
+const selectCocktail = localStorage.getItem('select-cocktail');
+const letter = localStorage.getItem('letter');
+console.log(letter)
 
 // Cocktail searched by Name & Ingredient
 
 if (localStorage.getItem('flag') == 'byName') {
     url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchName}`;
-} else {
+} else if (localStorage.getItem('flag') == 'byIngredient') {
     url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchIngredient}`;
+}
+else if(localStorage.getItem('flag') == 'select') {
+    url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=${selectCocktail}`;
+}
+else {
+    url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`;
 }
 
 fetch(url)
