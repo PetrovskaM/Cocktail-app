@@ -1,9 +1,8 @@
 const searchName = localStorage.getItem('searchBarName');
 const searchIngredient = localStorage.getItem('searchBarIngredient');
-const cocktail = document.querySelector('.cocktail');
+const cocktail = $('.cocktail');
 const selectCocktail = localStorage.getItem('select-cocktail');
 const letter = localStorage.getItem('letter');
-console.log(letter)
 
 // Cocktail searched by Name & Ingredient
 
@@ -28,7 +27,7 @@ fetch(url)
             const div = document.createElement('div');
             div.setAttribute('class', 'col-md-3 mt-5');
             div.innerHTML = `<img src="${element.strDrinkThumb}" id="${element.idDrink}" class="img-details"> <p class="text-white text-center fs"> ${element.strDrink}</p>`
-            cocktail.appendChild(div);
+            cocktail.append(div);
             detailsDrink(element.idDrink);
         })
     })
@@ -41,8 +40,8 @@ fetch(url)
 // Cliked image
 
 let detailsDrink = (drinkId) => {
-    const imgDetails = document.querySelector(`[id='${drinkId}']`);
-    imgDetails.addEventListener('click', (event) => {
+    const imgDetails = jQuery(`[id='${drinkId}']`);
+    imgDetails.click((event) => {
         localStorage.setItem('id', JSON.parse(event.target.id));
         window.open("cocktail-details.html");
     })

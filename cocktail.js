@@ -1,8 +1,8 @@
 const urlRandomCocktail = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
-const searchName = document.querySelector('.searchName');
-const searchIngredient = document.querySelector('.searchIngredient');
-const select = document.querySelector("#select-cocktail");
 const alphabet = document.querySelectorAll('.alphabet span');
+const searchName = $('.searchName');
+const searchIngredient = $('.searchIngredient');
+const select = $("#select-cocktail");
 
 // Eight  Random drinks
 for (let i = 1; i <= 8; i++) {
@@ -16,52 +16,47 @@ for (let i = 1; i <= 8; i++) {
             detailsDrink(data.drinks[0].idDrink);
 
         })
-
         .catch(function (error) {
             console.log(error);
         });
 }
 
 // Cliked image
-
 let detailsDrink = (drinkId) => {
-    let imgDetails = document.querySelector(`[id='${drinkId}']`);
-    imgDetails.addEventListener('click', (event) => {
+    let imgDetails = jQuery(`[id='${drinkId}']`);
+    imgDetails.click((event) => {
         localStorage.setItem('id', JSON.parse(event.target.id));
         window.open("cocktail-details.html");
     })
 }
 
-// Search by Name
 
-searchName.addEventListener('click', function () {
-    const searchBarName = document.querySelector('.searchBarName').value;
-    localStorage.setItem('searchBarName', searchBarName);
-    localStorage.setItem('flag', 'byName');
-    window.open("cocktail-filter.html");
-})
+// Search by Name
+    searchName.click(function () {
+        const searchBarName = $('.searchBarName').val();
+        localStorage.setItem('searchBarName', searchBarName);
+        localStorage.setItem('flag', 'byName');
+        window.open("cocktail-filter.html");
+    })
+
 
 // Search by Ingredient
-
-searchIngredient.addEventListener('click', function () {
-    const searchBarIngredient = document.querySelector('.searchBarIngredient').value;
+searchIngredient.click(function () {
+    const searchBarIngredient = $('.searchBarIngredient').val();
     localStorage.setItem('searchBarIngredient', searchBarIngredient);
     localStorage.setItem('flag', 'byIngredient');
     window.open("cocktail-filter.html");
 })
 
 // Non Alcoholic/Alcoholic
-
-select.addEventListener('change', function () {
-    const selectCocktail = document.querySelector('#select-cocktail').value;
+select.change(function () {
+    const selectCocktail = $('#select-cocktail').val();
     localStorage.setItem('select-cocktail', selectCocktail);
     localStorage.setItem('flag', 'select');
     window.open("cocktail-filter.html");
 
 });
- 
 // Search by first letter
-
 alphabet.forEach(element => {
     element.addEventListener('click', function () {
         localStorage.setItem('letter', element.innerHTML);
